@@ -1,0 +1,38 @@
+.card-product_img {
+  position: relative;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product_title {
+  margin: 1%;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  text-align: left;
+  white-space: nowrap;
+  color: rgb(73, 55, 90);
+  background: linear-gradient(to right, #454245, #776669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.btn-view {
+  margin-inline: 3px;
+  background-color: rgb(171, 168, 164);
+}
+
+.sale {
+  background-color: #f2f2f2;
+  color: #f74343;
+  padding: 4px;
+  font-size: 1rem;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.5rem;
+}

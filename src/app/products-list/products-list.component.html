@@ -1,0 +1,9 @@
+<h1 class="title collered_title text-center">All Products</h1>
+<!-- <hr> -->
+<div class="row row-cols-1 row-cols-md-4 g-4 mx-5 my-4" >
+    @for(product of products ; track $index){
+      <div class="col">
+          <app-product-card [productItem]="product"> </app-product-card>
+      </div>
+    }
+</div>

@@ -1,0 +1,36 @@
+/* footer.component.css */
+
+/* Sticky footer styles */
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Change this to match your footer background color */
+  color: white; /* Change this to match your footer text color */
+  min-height: 20vh;
+
+}
+
+
+.social-icons .social-icon {
+    color: #585454;
+    font-size: 24px;
+    margin: 0 8px;
+  }
+  
+  .social-icons .social-icon:hover {
+    color: rgb(85, 36, 103);
+  }
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #585454;
+    margin-right: 0.5rem;
+} 
+
+h5{
+    color:  #b23142;
+    font-size: 1.5rem;
+}
+

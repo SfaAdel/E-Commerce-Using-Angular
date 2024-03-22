@@ -1,0 +1,108 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+          <img class="rounded-4 fit" [src]="productItem?.images?.[0]" />
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+          <div *ngFor="let img of productItem?.images; let i = index">
+            <img width="60" height="60" class="rounded-2 mx-3" [src]="img" />
+          </div>
+        </div>
+        <!-- thumbs-wrap.// -->
+        <!-- gallery-wrap .end// -->
+      </aside>
+      <main class="col-lg-6">
+        <div class="ps-lg-3">
+          <h4 class="product_title text-dark">{{ productItem?.title }}</h4>
+          <div class="d-flex flex-row my-3">
+            <div class="text-warning mb-1 me-2">
+              @for (star of stars; track $index) {
+              <i class="fa fa-star"></i>
+              }
+              <span class="ms-1">
+                {{ productItem?.rating }}
+              </span>
+            </div>
+            @if(productItem?.stock!==0){
+            <span class="text-muted"
+              ><i class="fas fa-shopping-basket fa-sm mx-1"></i
+              >{{ productItem?.stock }} items</span
+            >
+            <span class="text-success ms-2">In stock</span>
+            } @else {
+
+            <span class="text-danger ms-2">Out of the stock</span>
+            }
+          </div>
+
+          <div class="mb-3">
+            <span class="h6 text-muted text-decoration-line-through mx-2"
+              >${{ productItem?.price }}</span
+            >
+            <span class="h4 text-success">${{ priceDiscount }}</span>
+            <span class="h5 text-danger sale"
+              >{{ productItem?.discountPercentage }}% Off
+            </span>
+          </div>
+
+          <p>
+            {{ productItem?.description }}
+          </p>
+          <div class="Brand">
+            <span>Category: </span> 
+            {{ productItem?.category }}
+          </div>
+          <div class="Brand">
+             <span>Brand: </span>
+             {{ productItem?.brand }}
+          </div>
+          <hr />
+          
+
+          <div class="row mb-4">
+            <!-- col.// -->
+            <div class="col-md-4 col-6 mb-3">
+              <label class="mb-2 d-block">Quantity</label>
+              <div class="input-group mb-3" style="width: 170px">
+                <button
+                  class="btn btn-white border border-secondary px-3"
+                  type="button"
+                  id="button-addon1"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  class="form-control text-center border border-secondary"
+                  placeholder="0"
+                  aria-label="Example text with button addon"
+                  aria-describedby="button-addon1"
+                />
+                <button
+                  class="btn btn-white border border-secondary px-3"
+                  type="button"
+                  id="button-addon2"
+                  data-mdb-ripple-color="dark"
+                >
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-flex-start">
+            <a href="#" class="btn btn-add shadow-0 mx-1">
+              <i class="me-1 fa fa-shopping-basket"></i> Add to cart
+            </a>
+            <a href="#" class="btn btn-save border py-2 icon-hover px-3 mx-1">
+              <i class="me-1 fa fa-heart fa-lg"></i> Save
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+<!-- content -->

@@ -1,0 +1,63 @@
+img {
+  position: relative;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  max-width: 100%;
+  max-height: 55vh;
+}
+
+.product_title {
+  margin: 1%;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  text-align: left;
+  white-space: nowrap;
+  color: rgb(73, 55, 90);
+  background: linear-gradient(to right, #454245, #776669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+.sale {
+  background-color:  rgb(245, 242, 230);
+  padding: 4px;
+  font-size: 1rem;
+  margin: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-save {
+  border-color: rgb(247, 239, 203);
+  background-color:  rgb(245, 242, 230);
+  color: rgb(15, 35, 15);
+}
+
+.icon-hover:hover {
+  color: #ca3b3b;
+}
+
+.icon-hover:hover i {
+  color: #ca3b3b;
+}
+
+.Brand{
+  background-color: rgb(245, 242, 230);
+  color: rgb(17, 67, 17);
+  margin: 5px;
+  height: 2rem;
+  width: 15rem;
+  padding-top: 2px;
+  padding-inline: 10px;
+}
+
+span{
+  font-weight: bold;
+  color: #4c4545;
+
+}

@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+.title{
+    margin: 1%;
+    font-weight: bolder;
+    font-size: 4rem;
+    text-align: left;
+    white-space: nowrap;
+    color:  rgb(73, 55, 90);
+    background: linear-gradient(to right, #8a2387, #e94057);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+  }
+
+  .btn-add{
+    background-color: rgb(64, 111, 64);
+    color: aliceblue;
+  }
+  
+  .btn-add:hover{
+    background-color: rgb(82, 167, 82);
+  }
+
+
+
+
+.active-link{
+  font-weight: bolder;
+  color: rgb(105, 68, 122);
+}
+
+.collered_title{
+  color: #e94057;
+}
+
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    rgba(35, 31, 26, 0.559) 0%,
+    #8a2387 29%,
+    #e94057 67%,
+    #070707 80%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

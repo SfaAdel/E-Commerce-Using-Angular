@@ -1,0 +1,50 @@
+<div class="card">
+  <img
+    [src]="productItem.images![0]"
+    class="card-img-top card-product_img"
+    alt="..."
+  />
+  <div class="card-body">
+    @if(productItem.stock!==0){
+    <span class="text-success">
+      <!-- <i class="fa-sharp fa-solid fa-star" ></i> -->
+      On stock
+    </span>
+    } @else {
+    <span class="text-danger">
+      <!-- <i class="fa-sharp fa-solid fa-star" ></i> -->
+      Out of stock
+    </span>
+    }
+    <br />
+    <br />
+
+    <button class="btn" (click)="redirectToDetails(productItem.id)">
+      <h5 class="product_title text-left mx-3">{{ productItem.title }}</h5>
+    </button>
+
+    <div class="text-warning mb-1 me-2 mx-3">
+      @for (star of stars; track $index) {
+      <i class="fa fa-star"></i>
+      }
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Description: {{ productDiscription }}</li>
+      <li class="list-group-item sale price text-success">
+        Price:
+        <span class="h4 text-success">${{ priceDiscount }}</span>
+        <span class="h6 text-danger text-decoration-line-through mx-2"
+          >${{ productItem.price }}</span
+        >
+      </li>
+    </ul>
+    <div class="d-flex justify-content-center m-2">
+      <button class="btn btn-view" (click)="redirectToDetails(productItem.id)">
+        View
+      </button>
+      <button class="btn btn-add">
+        <i class="me-1 fa fa-shopping-basket"></i> Add To Cart
+      </button>
+    </div>
+  </div>
+</div>
