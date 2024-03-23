@@ -42,7 +42,7 @@
       <button class="btn btn-view" (click)="redirectToDetails(productItem.id)">
         View
       </button>
-      <button class="btn btn-add">
+      <button class="btn btn-add" [disabled]="productItem?.stock == 0" (click)="addToCart(productItem.id)">
         <i class="me-1 fa fa-shopping-basket"></i> Add To Cart
       </button>
     </div>

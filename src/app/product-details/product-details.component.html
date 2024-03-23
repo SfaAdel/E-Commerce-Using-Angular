@@ -93,9 +93,12 @@
             </div>
           </div>
           <div class="d-flex justify-content-flex-start">
-            <a href="#" class="btn btn-add shadow-0 mx-1">
-              <i class="me-1 fa fa-shopping-basket"></i> Add to cart
-            </a>
+            <button class="btn" [disabled]="productItem?.stock == 0">
+              <a href="#" class="btn btn-add shadow-0 mx-1">
+                <i class="me-1 fa fa-shopping-basket"></i> Add to cart
+              </a>
+            </button>
+            
             <a href="#" class="btn btn-save border py-2 icon-hover px-3 mx-1">
               <i class="me-1 fa fa-heart fa-lg"></i> Save
             </a>

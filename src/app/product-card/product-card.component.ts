@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component , Input } from '@angular/core';
 import { Product } from '../interfaces/product';
 import { Router } from '@angular/router';
+import { AddToCartService } from '../services/add-to-cart.service';
+import { CartCounterService } from '../services/cart-counter.service';
 
 @Component({
   selector: 'app-product-card',
@@ -10,6 +12,8 @@ import { Router } from '@angular/router';
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css'
 })
+
+
 export class ProductCardComponent {
   @Input() productItem ! : Product ;
   productDiscription!: string ;
@@ -35,11 +39,33 @@ export class ProductCardComponent {
     }
   }
 
-  constructor(private router:Router){
-
+  counter = 0;
+  items: any[] = [];
+  constructor(private router: Router, private cartService: AddToCartService,private counterService: CartCounterService) {
+    this.items = this.cartService.getItems();
   }
   redirectToDetails(id? : number){
     this.router.navigate([`product-details/${id}`])
     
   }
+
+
+addToCart(product: any) {
+    this.cartService.addToCart(product);
+    this.counterService.setCounter(this.counter +1);
+    window.alert('Product added to cart');
+  }
+  increaseQuantity(index: number) {
+    this.cartService.increaseQuantity(index);
+  }
+
+  decreaseQuantity(index: number) {
+    this.cartService.decreaseQuantity(index);
+  }
+
+  removeItem(index: number) {
+    this.cartService.removeItem(index);
+  }
+
+  
 }

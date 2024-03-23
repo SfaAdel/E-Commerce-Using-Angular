@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../interfaces/product';
 import productJson from '../../assets/products-list.json';
 import { CommonModule } from '@angular/common';
+import { AddToCartService } from './../services/add-to-cart.service';
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -11,13 +13,17 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class ProductDetailsComponent implements OnInit {
+  
   products: Array<Product> = productJson;
   productItem?: Product;
   priceDiscount!: number;
   rate!: number;
   stars: number[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute , private AddToCartService: AddToCartService) {
+    this.items = this.AddToCartService.getItems();
+
+  }
 
   ngOnInit(): void {
   const paramId = this.activatedRoute.snapshot.params['id'];
@@ -34,6 +40,20 @@ export class ProductDetailsComponent implements OnInit {
     this.rate = Math.round(this.productItem.rating!);
     this.stars = Array(this.rate).fill(0).map((_, index) => index + 1);
   }
+}
+
+items: any[] = [];
+
+increaseQuantity(index: number) {
+  this.AddToCartService.increaseQuantity(index);
+}
+
+decreaseQuantity(index: number) {
+  this.AddToCartService.decreaseQuantity(index);
+}
+
+removeItem(index: number) {
+  this.AddToCartService.removeItem(index);
 }
 
 }
