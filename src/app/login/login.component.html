@@ -1,1 +1,113 @@
-<p>login works!</p>
+<section>
+  <!-- <div class="col-md-5 col-lg-3 col-xl-6 m-5">
+    <img
+      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+      class="img-fluid"
+      alt="Sample image"
+    />
+  </div> -->
+
+  <div>
+    <h1 class="login-title text-center">Login</h1>
+    <hr />
+
+    <form #loginForm="ngForm" (ngSubmit)="loginform(loginForm)">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input
+          type="email"
+          id="form2Example1"
+          class="form-control"
+          required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          name="email"
+          ngModel
+          #userEmail="ngModel" 
+        />
+        @if(userEmail.touched && userEmail.invalid){
+          <div class="form-text color">
+            @if(userEmail.errors?.['required']){
+              <small>This field is required</small>
+            }
+            @if(userEmail.errors?.['pattern']){
+              <small>It is not an Email</small>
+            }
+          </div>
+        }
+      </div>
+      
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input
+          type="password"
+          id="form2Example2"
+          class="form-control"
+          required
+          name="password"
+          ngModel
+          #userPass="ngModel"
+        />
+        @if(userPass.touched && userPass.invalid){
+            <div class="form-text color">
+                <small>This field is required</small>
+            </div>
+        }
+      </div>
+
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-4">
+        <div class="col d-flex">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="form2Example31"
+              name="remember-me"
+              ngModel
+            />
+            <label class="form-check-label" for="form2Example31">
+              Remember me
+            </label>
+          </div>
+        </div>
+
+        <div class="col">
+          <!-- Simple link -->
+          <a href="#!" class="forget">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="button" class="btn my-btn btn-block mb-4" [disabled]="loginForm.invalid" (click)="redirectTohOME()">Sign in</button>
+
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>
+          Not a member?
+          <button (click)="redirectToRegister()" class="btn" >Register</button>
+        </p>
+        <p>or sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-facebook-f color"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-google color"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-twitter color"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="fab fa-github color"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

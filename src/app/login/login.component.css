@@ -1,0 +1,69 @@
+    label{
+        color: aliceblue;
+    }
+
+    section{
+        display: flex;
+        justify-content: space-evenly;
+        background: linear-gradient(to right, #443a43, #443a43);
+        padding: 3rem;
+        border-radius: 50px;
+        width: 40vw;
+        margin: 2rem;
+    }
+
+
+    form{
+
+        width: 20rem;
+
+    }
+
+    .color{
+        color: #ff8956;
+    }
+
+    .login-title{
+        margin: 1%;
+    font-weight: bolder;
+    font-size: 4rem;
+    text-align: left;
+    white-space: nowrap;
+    color:  rgb(73, 55, 90);
+    background: linear-gradient(to right, #ff8956, #e94057);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+    }
+
+    .my-btn{
+        width: 100%;
+        color: #343334;    
+        background-color: #c08166;
+
+    }
+
+    .my-btn:hover{
+        background-color: #ff8956;
+   
+    }
+
+    .forget{
+        color:  #ff8956;
+    }
+
+    p{
+        color: white;
+    }
+
+    a{
+        text-decoration: none;
+        color: #ff8956;
+    }
+
+    button{
+        color: #ff8956;
+    }
+
+
+    

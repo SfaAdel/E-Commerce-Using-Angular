@@ -1,0 +1,97 @@
+label {
+    color: aliceblue;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, #443a43, #443a43);
+    padding: 3rem;
+    border-radius: 50px;
+    margin: 2rem auto;
+}
+
+form {
+    width: 40vw;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(185, 183, 183);
+    margin: 2rem 0;
+}
+
+.or-divider hr {
+    flex: 1;
+    border: none;
+    height: 1px;
+    background-color: rgb(185, 183, 183);
+    margin: 0 10px;
+}
+
+
+
+.color {
+    color: #ff8956;
+    font-size: 1.5rem;
+}
+
+.error{
+    color: #ff8956;
+ 
+}
+
+.color:hover{
+    color: #ea6173 ;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+
+}
+
+.login-title {
+    margin: 1%;
+    font-weight: bolder;
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(73, 55, 90);
+    background: linear-gradient(to right, #ff8956, #ea6173);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.my-btn {
+    width: 100%;
+    color: #343334;
+    background-color: #ff8956;
+}
+
+
+.forget {
+    color: #ff8956;
+}
+
+p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #ff8956;
+}
+
+button {
+    color: #ff8956;
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 2rem;
+    }
+
+    .login-title {
+        font-size: 3rem;
+    }
+}

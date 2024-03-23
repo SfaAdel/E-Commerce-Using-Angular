@@ -1,1 +1,139 @@
-<p>register works!</p>
+<section>
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+            <h1 class="login-title text-center">Register Now</h1>
+            <hr>
+            <div class="text-center">
+                <p>sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f color"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google color"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter color"></i>
+              </button>
+          
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github color"></i>
+              </button>
+              <div class="or-divider my-2">
+                <hr>
+                <span>OR</span>
+                <hr>
+              </div>
+              
+            </div>
+
+            <!-- name input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example11">Name</label>
+                <input 
+                type="text" 
+                id="form2Example11" 
+                class="form-control" 
+                formControlName="name"
+                />
+                @if(registerForm.controls['name'].touched && registerForm.controls['name'].invalid){
+                    <div class="form-text error">
+                        @if(registerForm.controls['name'].errors?.['required']){
+                            <small>This field is required</small>
+                        }
+                    </div>
+                }
+              </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1">Email address</label>
+              <input 
+              type="email" 
+              id="form2Example1" 
+              class="form-control" 
+              formControlName="email"
+              />
+              @if(registerForm.controls['email'].touched && registerForm.controls['email'].invalid){
+                <div class="form-text error">
+                    @if(registerForm.controls['email'].errors?.['required']){
+                        <small>This field is required</small>
+                    }
+                    @if(registerForm.controls['email'].errors?.['email']){
+                        <small>It is not an Email</small>
+                    }
+                </div>
+            }
+            </div>
+
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example12">User Name</label>
+                <input 
+                type="text" 
+                id="form2Example12" 
+                class="form-control" 
+                formControlName="username"
+                />
+                @if(registerForm.controls['username'].touched && registerForm.controls['username'].invalid){
+                    <div class="form-text error">
+                        @if(registerForm.controls['username'].errors?.['required']){
+                            <small>This field is required</small>
+                        }
+                        @if(registerForm.controls['username'].errors?.['pattern']){
+                            <small>Username Must contains no spaces</small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Password</label>
+              <input 
+              type="password" 
+              id="form2Example2" 
+              class="form-control"
+              formControlName="password"
+              />
+
+              @if(registerForm.controls['password'].touched && registerForm.controls['password'].invalid){
+                <div class="form-text error mb-3">
+                    @if(registerForm.controls['password'].errors?.['required']){
+                        <small>This field is required</small>
+                    }
+                    @if(registerForm.controls['password'].errors?.['pattern']){
+                        <small>password length must be more than 8 characters , contain at least one lowercase , one uppercase , one digit and special character (Like: *%$#)</small>
+                    }
+                </div>
+            }
+                <div class="form-outline mt-3">
+                    <label class="form-label mb-2" for="form2Example3">Confirm Password</label>
+                    <input 
+                    type="password" 
+                    id="form2Example3" 
+                    class="form-control" 
+                    formControlName="confirmPassword"
+                    />
+                </div>
+                @if(registerForm.controls['confirmPassword'].touched && registerForm.errors?.['notMatch']){
+                    <div class="form-text error">
+                        @if(registerForm.controls['confirmPassword'].errors?.['required']){
+                            <small>This field is required</small>
+                        }
+                        @if(registerForm.errors?.['notMatch']){
+                            <small>password Don't Match</small>
+                        }
+                    </div>
+                }
+            </div>
+          
+            <!-- Submit button -->
+            <button type="button" class="btn my-btn btn-block mb-4" (click)="registerSubmit()" [disabled]="registerForm.invalid">Submit</button>
+          
+            <!-- login buttons -->
+            <div class="text-center">
+              <p>Alreadr have an account? <button (click)="redirectToLogin()" class="btn"> Login </button> </p>
+            </div>
+          </form>
+</section>
